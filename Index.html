@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definisi & Perbedaan Entitas Bisnis Indonesia</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menggunakan font Inter untuk tampilan modern */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0070c0',
+                        'secondary': '#f2a900',
+                    }
+                }
+            }
+        }
+
+        // Fungsi untuk mengaktifkan tab yang dipilih
+        function showTab(tabId) {
+            // Sembunyikan semua konten tab
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Nonaktifkan semua tombol tab
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('bg-white', 'text-primary', 'border-b-4', 'border-primary');
+                button.classList.add('bg-primary/10', 'text-gray-600');
+            });
+
+            // Tampilkan konten tab yang dipilih
+            document.getElementById(tabId).classList.remove('hidden');
+
+            // Aktifkan tombol tab yang dipilih
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('bg-white', 'text-primary', 'border-b-4', 'border-primary');
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.remove('bg-primary/10', 'text-gray-600');
+        }
+
+        // Jalankan tab pertama saat halaman dimuat
+        window.onload = () => {
+            showTab('pt');
+        }
+    </script>
+</head>
+<body>
+    <div class="max-w-4xl mx-auto p-4 md:p-8">
+        <header class="text-center mb-8 bg-white p-6 rounded-xl shadow-lg">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-primary mb-2">Panduan Entitas Bisnis Utama Indonesia</h1>
+            <p class="text-gray-600 text-lg">PT, CV, Yayasan, dan BUMN: Pengertian, Penjelasan, dan Perbedaan Kunci</p>
+        </header>
+
+        <!-- Container untuk Tab Navigation -->
+        <div class="bg-white rounded-t-xl shadow-md overflow-x-auto">
+            <div class="flex border-b border-gray-200">
+                <button class="tab-button flex-1 py-3 px-2 text-sm md:text-base font-semibold transition duration-300 ease-in-out whitespace-nowrap" onclick="showTab('pt')">
+                    PT (Perseroan Terbatas)
+                </button>
+                <button class="tab-button flex-1 py-3 px-2 text-sm md:text-base font-semibold transition duration-300 ease-in-out whitespace-nowrap" onclick="showTab('cv')">
+                    CV (Commanditaire Vennootschap)
+                </button>
+                <button class="tab-button flex-1 py-3 px-2 text-sm md:text-base font-semibold transition duration-300 ease-in-out whitespace-nowrap" onclick="showTab('yayasan')">
+                    Yayasan
+                </button>
+                <button class="tab-button flex-1 py-3 px-2 text-sm md:text-base font-semibold transition duration-300 ease-in-out whitespace-nowrap" onclick="showTab('bumn')">
+                    BUMN
+                </button>
+            </div>
+        </div>
+
+        <!-- Container untuk Konten Tab -->
+        <div class="bg-white p-6 md:p-8 rounded-b-xl shadow-xl">
+
+            <!-- TAB: PT (PERSEROAN TERBATAS) -->
+            <div id="pt" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-primary mb-4">PT (Perseroan Terbatas)</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p><strong>Pengertian:</strong> PT adalah badan hukum yang merupakan persekutuan modal, didirikan berdasarkan perjanjian, melakukan kegiatan usaha dengan modal dasar yang seluruhnya terbagi dalam saham, dan memenuhi persyaratan yang ditetapkan oleh undang-undang.</p>
+                    <p><strong>Penjelasan Kunci:</strong></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            <strong class="text-primary">Kewajiban Terbatas (Limited Liability):</strong> Kekayaan pemegang saham terpisah dari kekayaan perusahaan. Pemegang saham hanya bertanggung jawab sebesar modal yang disetorkan (nilai saham yang dimiliki). [attachment_0](attachment)
+                        </li>
+                        <li>
+                            <strong class="text-primary">Modal dan Saham:</strong> Modal PT berasal dari penjualan saham. Perubahan kepemilikan saham tidak mempengaruhi kelangsungan perusahaan.
+                        </li>
+                        <li>
+                            <strong class="text-primary">Organ:</strong> Dipimpin oleh RUPS (Rapat Umum Pemegang Saham), Direksi (pelaksana harian), dan Dewan Komisaris (pengawas).
+                        </li>
+                        <li>
+                            <strong class="text-primary">Regulasi:</strong> Diatur oleh UU Nomor 40 Tahun 2007 tentang Perseroan Terbatas.
+                        </li>
+                    </ul>
+                    <p><strong>Ideal untuk:</strong> Usaha berskala besar, perusahaan yang membutuhkan investasi modal besar, dan perusahaan yang menginginkan pemisahan harta pemilik dan perusahaan secara tegas.</p>
+                </div>
+            </div>
+
+            <!-- TAB: CV (COMMANDITAIRE VENNOOTSCHAP) -->
+            <div id="cv" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-secondary mb-4">CV (Commanditaire Vennootschap)</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p><strong>Pengertian:</strong> CV atau Persekutuan Komanditer adalah bentuk badan usaha yang didirikan oleh dua orang atau lebih, di mana terdapat dua jenis sekutu: Sekutu Aktif (Komplementer) dan Sekutu Pasif (Komanditer).</p>
+                    <p><strong>Penjelasan Kunci:</strong></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            <strong class="text-secondary">Sekutu Aktif (Komplementer):</strong> Bertanggung jawab penuh dan berhak menjalankan perusahaan. Tanggung jawabnya tidak terbatas (termasuk harta pribadi).
+                        </li>
+                        <li>
+                            <strong class="text-secondary">Sekutu Pasif (Komanditer):</strong> Bertanggung jawab terbatas hanya pada modal yang disetorkan. Tidak berhak mengurus perusahaan, hanya sebagai investor. 
+                        </li>
+                        <li>
+                            <strong class="text-secondary">Status Hukum:</strong> CV bukanlah badan hukum. Hal ini berbeda dengan PT yang merupakan badan hukum.
+                        </li>
+                        <li>
+                            <strong class="text-secondary">Pendirian:</strong> Didirikan dengan akta notaris dan didaftarkan, namun prosesnya lebih sederhana dan lebih murah dibandingkan PT.
+                        </li>
+                    </ul>
+                    <p><strong>Ideal untuk:</strong> Usaha skala menengah yang ingin menggabungkan keahlian operasional (Sekutu Aktif) dan modal (Sekutu Pasif) dengan biaya pendirian yang lebih rendah daripada PT.</p>
+                </div>
+            </div>
+
+            <!-- TAB: YAYASAN -->
+            <div id="yayasan" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-green-600 mb-4">Yayasan (Foundation)</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p><strong>Pengertian:</strong> Yayasan adalah badan hukum yang terdiri dari kekayaan yang dipisahkan dan diperuntukkan untuk mencapai tujuan tertentu di bidang sosial, keagamaan, dan kemanusiaan, tanpa memiliki anggota.</p>
+                    <p><strong>Penjelasan Kunci:</strong></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            <strong class="text-green-600">Nirlaba (Non-Profit):</strong> Tujuan utama Yayasan **bukan** mencari keuntungan/laba, melainkan untuk kepentingan sosial. Hasil kegiatan usaha tidak boleh dibagikan kepada pendiri, pengurus, atau pembina.
+                        </li>
+                        <li>
+                            <strong class="text-green-600">Kekayaan Terpisah:</strong> Kekayaan Yayasan terpisah dari kekayaan pribadi pendiri dan pengurus.
+                        </li>
+                        <li>
+                            <strong class="text-green-600">Organ:</strong> Terdiri dari Pembina (pengambil keputusan tertinggi), Pengurus (pelaksana kegiatan), dan Pengawas (melakukan pengawasan). 
+                        </li>
+                        <li>
+                            <strong class="text-green-600">Pendirian:</strong> Didirikan dengan akta notaris, ditetapkan sebagai badan hukum melalui SK Kementerian Hukum dan HAM.
+                        </li>
+                    </ul>
+                    <p><strong>Ideal untuk:</strong> Organisasi yang bergerak di sektor pendidikan, kesehatan, lingkungan, atau keagamaan yang tidak berorientasi pada pembagian keuntungan.</p>
+                </div>
+            </div>
+
+            <!-- TAB: BUMN -->
+            <div id="bumn" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-red-600 mb-4">BUMN (Badan Usaha Milik Negara)</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p><strong>Pengertian:</strong> BUMN adalah badan usaha yang seluruh atau sebagian besar modalnya (minimal 51%) dimiliki oleh negara melalui penyertaan secara langsung yang berasal dari kekayaan negara yang dipisahkan.</p>
+                    <p><strong>Penjelasan Kunci:</strong></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            <strong class="text-red-600">Tujuan:</strong> Menyediakan barang dan/atau jasa yang dibutuhkan publik, serta mengejar keuntungan untuk menambah kas negara.
+                        </li>
+                        <li>
+                            <strong class="text-red-600">Jenis Utama:</strong>
+                            <ul class="list-circle list-inside ml-4 mt-2">
+                                <li><strong>Perum (Perusahaan Umum):</strong> Bertujuan melayani kepentingan umum (misalnya Perum Perhutani).</li>
+                                <li><strong>Persero (Perusahaan Perseroan):</strong> Berbentuk PT yang modalnya terbagi dalam saham, dengan tujuan utama mengejar keuntungan (misalnya PT Telkom Tbk).</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="text-red-600">Kewenangan:</strong> Beroperasi di sektor-sektor strategis yang menguasai hajat hidup orang banyak. 
+                        </li>
+                    </ul>
+                    <p><strong>Ideal untuk:</strong> Melaksanakan peran negara dalam perekonomian, mengelola sumber daya strategis, dan melayani kepentingan publik.</p>
+                </div>
+            </div>
+
+            <!-- PERBANDINGAN UTAMA (Selalu terlihat di bawah tab) -->
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Tabel Perbedaan Kunci</h2>
+                <div class="overflow-x-auto bg-gray-50 p-4 rounded-lg shadow-inner">
+                    <table class="min-w-full divide-y divide-gray-300">
+                        <thead class="bg-primary/90 text-white">
+                            <tr>
+                                <th class="px-3 py-3 text-left text-sm font-semibold uppercase tracking-wider rounded-tl-lg">Aspek</th>
+                                <th class="px-3 py-3 text-left text-sm font-semibold uppercase tracking-wider">PT</th>
+                                <th class="px-3 py-3 text-left text-sm font-semibold uppercase tracking-wider">CV</th>
+                                <th class="px-3 py-3 text-left text-sm font-semibold uppercase tracking-wider">Yayasan</th>
+                                <th class="px-3 py-3 text-left text-sm font-semibold uppercase tracking-wider rounded-tr-lg">BUMN</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-blue-50">
+                                <td class="px-3 py-4 font-semibold text-gray-800 whitespace-nowrap">Status Hukum</td>
+                                <td class="px-3 py-4 whitespace-nowrap">Badan Hukum</td>
+                                <td class="px-3 py-4 whitespace-nowrap">Bukan Badan Hukum</td>
+                                <td class="px-3 py-4 whitespace-nowrap">Badan Hukum</td>
+                                <td class="px-3 py-4 whitespace-nowrap">Badan Hukum</td>
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-blue-50">
+                                <td class="px-3 py-4 font-semibold text-gray-800 whitespace-nowrap">Tanggung Jawab</td>
+                                <td class="px-3 py-4">Terbatas (sebesar modal)</td>
+                                <td class="px-3 py-4">Campuran (Aktif: Tidak Terbatas, Pasif: Terbatas)</td>
+                                <td class="px-3 py-4">Terbatas</td>
+                                <td class="px-3 py-4">Terbatas</td>
+                            </tr>
+                            <tr class="hover:bg-blue-50">
+                                <td class="px-3 py-4 font-semibold text-gray-800 whitespace-nowrap">Tujuan Utama</td>
+                                <td class="px-3 py-4">Mencari Keuntungan</td>
+                                <td class="px-3 py-4">Mencari Keuntungan</td>
+                                <td class="px-3 py-4">Sosial, Nirlaba</td>
+                                <td class="px-3 py-4">Pelayanan Publik & Keuntungan</td>
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-blue-50">
+                                <td class="px-3 py-4 font-semibold text-gray-800 whitespace-nowrap">Modal</td>
+                                <td class="px-3 py-4">Saham</td>
+                                <td class="px-3 py-4">Sekutu Aktif & Pasif</td>
+                                <td class="px-3 py-4">Kekayaan yang Dipisahkan</td>
+                                <td class="px-3 py-4">Penyertaan Negara</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="text-center mt-8 p-4 text-gray-500 text-sm">
+            <p>&copy; 2025 Primer Entitas Bisnis. Informasi ini disajikan sebagai panduan umum.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
